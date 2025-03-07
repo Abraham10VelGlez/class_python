@@ -71,27 +71,157 @@ else:
 
        
 
-valor = 10000
+valor = 10000 #2
 
 if valor == 1000:
     print('son iguales')
 elif valor <= 15:
-    print('no es menor a 15 el numero{valor}')
+    print(f"no es menor a 15 el numero {valor}")
 else:
     print('este numero es mayor de 1000')
     
     
     
-cadena_txt = 'Tipologia'
+tipologia = 'HB3'
 #comparacion de varios casos
-match 
+match tipologia:
+    case 'HB1':
+        print(f"escogiste la tipología {tipologia}")
+    case 'HB3':
+        print(f"escogiste la tipología {tipologia}")
+    case 'HC1':
+        print(f"escogiste la tipología {tipologia}")
+    case _:
+        print('No tenemos conocimiento acerca de esa tipología')
+        
+        
+        
+#funciones (bloqu de codigo)
+
+
+def funcion1( x , y ):
+    return x + y
+
+
+resultado = funcion1(5,5)
+print(resultado)
     
+
+#retornar lista
+listaconindicexfuncion = [ 15, 30 , 45 , 55 , 80 , 100]
+def funcion2( lista ):
+    return lista[0] + lista[2]
+
+    
+resultado2 = funcion2(listaconindicexfuncion)
+print(resultado2)
+
+#ciclos,bucles o loops
+
+list = [ 'madera' , 'concreto' , 'aluminio', 'tablaroca']
+
+for listar in list:
+    print(listar)
+
+
+lista_numeros = [ 15, 30 , 45 , 55 , 80 , 100]
+for listar2 in lista_numeros:
+    print(listar2 * 2)
+
+
+numeroinicio = 1
+numerotermino = 99
+while numeroinicio < numerotermino: #<=
+    print(numeroinicio)
+    numeroinicio += 1
     
 
 
+#OBJETOS
+#TRAER DATOS DEL MUNOD REAL A UN OBJETO
+inmobiliaria = {
+  "nombredelsitio": "Casa de leones",
+  "propiedades": [
+    {
+      "id": 1,
+      "titulo": "Departamento en el centro de la ciudad",
+      "tipo": "renta",
+      "precio": 15000,
+      "moneda": "MXN",
+      "ubicacion": {
+        "direccion": "Av. Reforma 123, Ciudad de México",
+        "ciudad": "CDMX",
+        "pais": "México"
+      },
+      "caracteristicas": {
+        "metros_cuadrados": 80,
+        "habitaciones": 2,
+        "baños": 2,
+        "estacionamientos": 1,
+        "amueblado": True
+      },      
+      "descripcion": "Hermoso departamento en el centro de la ciudad con vista panorámica.",
+      "contacto": {
+        "nombre": "Carlos Pérez",
+        "telefono": "+52 55 1234 5678",
+        "email": "carlos@inmobiliaria.com"
+      }
+    },
+    {
+      "id": 2,
+      "titulo": "Casa en zona residencial",
+      "tipo": "venta",
+      "precio": 3500000,
+      "moneda": "MXN",
+      "ubicacion": {
+        "direccion": "Calle Primavera 45, Guadalajara",
+        "ciudad": "Guadalajara",
+        "pais": "México"
+      },
+      "caracteristicas": {
+        "metros_cuadrados": 200,
+        "habitaciones": 4,
+        "baños": 3,
+        "estacionamientos": 2,
+        "amueblado": False
+      },      
+      "descripcion": "Espaciosa casa con jardín y terraza en zona residencial tranquila.",
+      "contacto": {
+        "nombre": "Ana López",
+        "telefono": "+52 33 5678 9101",
+        "email": "ana@inmobiliaria.com"
+      }
+    }
+  ]
+}
 
+
+print(inmobiliaria['nombredelsitio'])
+
+#print(inmobiliaria['propiedades'])
+#print(inmobiliaria['propiedades'][0]['id'])
+
+
+def filtrardatos(diccionario):
+    return ('La %s es una inmobiliaria que vende un %s' % (diccionario['nombredelsitio'], diccionario['propiedades'][0]['titulo'] ))    
+
+print(filtrardatos(inmobiliaria))
+
+
+#Clases
+
+class tiposdeviviendas:
+    def __init__(self,nombre,tipologia,edad,numero_pisos):
+        self.nombre = nombre
+        self.tipologia = tipologia
+        self.edad = edad
+        self.numero_pisos = numero_pisos
     
+    def llamado(self):
+        return '%s tiene una tipología %s, con una edad de %s años y tiene %s pisos construidos' % (self.nombre, self.tipologia, self.edad, self.numero_pisos )
 
-
-
+#crea un objeto de la clase
+objeto = tiposdeviviendas('Infonavit','HB1',10,2)
+#mencion del objeto de la clase
+print(objeto.llamado()) 
 
